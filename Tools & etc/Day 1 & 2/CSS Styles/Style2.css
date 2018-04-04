@@ -1,0 +1,88 @@
+
+nav ul{
+	background-color: blue;
+	text-align: center;
+}
+
+nav ul li{
+	font-size: 20px;
+	display:inline;
+	background-color: blue; padding-right: 100px
+}
+
+nav ul a{
+	color: white;
+	text-decoration: none;
+}
+
+.Main-header{
+	font-size: 50px;
+	text-align:center;
+	background-color: orange;
+	color: white;
+	padding: 0;
+	margin: 0;
+}
+
+.Head{
+	font-size: 50px;
+	text-align:center;
+	background-color: blue;
+	color: white;
+	padding: 0;
+	margin: 0;
+}
+
+.Main{
+	padding: 0;
+	margin: 0;
+}
+nav{
+	margin: 0;
+	padding: 0;
+}
+
+nav ul{
+	margin: 0;
+	padding: 0;
+}
+
+#blog1{
+	background-color: red;
+}
+
+#blog2{background-color: #FF5733;}
+
+#blog3{background-color: #35549C}
+
+.container{
+	width: 80%;
+	margin: auto;
+	padding: 2%
+}
+
+.foot{
+	background-color: orange;
+	position: fixed;
+	width:100%;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	fo
+}
+
+small{ 
+	color: white;
+	font-style: italic;
+	 }
+
+	 h2{ 
+	color: white;
+	 }
+
+	 p{ 
+	color: white;
+	font-size: 20px;
+	font-style: italic;
+	 }
+
