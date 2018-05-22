@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {user} from  '../models/widget.model.client'
 
 // injecting service into module
 @Injectable()
@@ -7,7 +8,7 @@ export class WidgetService {
 
   constructor() { }
 
-users = [
+widgets: Widget[] = [
   { _id: "123", widgetType: "HEADING", pageId: "321", size: 2, text: "GIZMODO"},
   { _id: "234", widgetType: "HEADING", pageId: "321", size: 4, text: "Lorem ipsum"},
   { _id: "345", widgetType: "IMAGE", pageId: "321", width: "100%", url: "http://lorempixel.com/400/200/"},
@@ -19,18 +20,18 @@ users = [
 ;
 
  
-  createWidget(pageId, widget) {
-    widget._id = Math.random();
-    page.websiteId = websiteId;
-   this.widgets.push(widget);
-   return widget;
+  createWidget(pageId: string, widget: Widget) {
+    widget._id = Math.floor(Math.random() * 10000).toString();
+    widget.pageId = pageId;
+    this.widgets.push(widget);
+    return widget;
   }
 
-  findPageById(pageId) {
-    for (let x = 0; x < this.pages.length; x++) {
-      if (this.pages[x].websiteId === WebsiteID)
-        result.push(this.pages[i];
-
+ findWidgetsByPageId(pageId: string) {
+    let result = [];
+    for (var i = 0; i < this.widgets.length; i++){
+      if (this.widgets[i].pageId) === pageId) {
+        result.push(this.widgets[i]);
     }
   }
   
@@ -38,95 +39,29 @@ users = [
 }
 
 
-   updateUser(pageId, page) { 
-    let oldPage = this.findPageById(pageId);
-    const index = this.pages.indexOf(oldPage);
-
-    this.users[index].username = user.username;
-    this.users[index].password = user.password;
-    this.users[index].firstName = user.firstName;
-    this.users[index].lastName = user.lastName;
-    this.users[index].email = user.email;
-
-
-deletePage(pageId) { 
-     var oldUser = this.findUserById(userId);
-     var index = this.users.indexOf(oldUser);
-     this.users.splice(index, 1);
-
-
-
-
-  findUserByUsername(username: string) { … }
-  findUserByCredentials(username: string, password: string) { … }
-  updateUser(userId, user) { … }
-  deleteUser(userId) { … }
-
-
-import { Injectable } from '@angular/core';
-
-// injecting service into module
-@Injectable()
-
-export class UserService {
-
-  constructor() { }
-
-users = [
-  { _id: "321", name: "Post 1", websiteId: "456", description: "Lorem" },
-  { _id: "432", name: "Post 2", websiteId: "456", description: "Lorem" },
-  { _id: "543", name: "Post 3", websiteId: "456", description: "Lorem" }
-]
-;
-
-  createUser(user) {
-    user._id = Math.floor(Math.random() * Math.floor(10000)).toString();
-    this.users.push(user);
-    return user;
-  }
-
-  findUserById(userId: string) {
-    for (let x = 0; x < this.users.length; x++) {
-      if (this.users[x]._id === userId) {  
-        return this.users[x]; 
-      }
+ findWidgetsById(widgetId: string) {
+    for (var i = 0; i < this.widgets.length; i++){
+      if (this.widgets[i]._id) === widgetId) {
+        return this.widgets[i]._id;
     }
   }
-
-  findUserByUsername(username: string) { 
-  // for (let x = 0; x < this.users.length; x++) {
-  //     if (this.users[x].username === username) {  
-  //       return this.users[x]; 
-  //     }
-  //   }
-    return this.users.find(function(user) {
-      return user.username === username;
-    })
-  }
-
-  findUserByCredentials(username: string, password: string) { 
-   for (let x = 0; x < this.users.length; x++) {
-      if (this.users[x].username === username && this.users[x].password === password) {  
-        return this.users[x]; 
-      }
-    }
-  }
-
-  updateUser(userId: string, user) { 
-    var oldUser = this.findUserById(userId);
-    var index = this.users.indexOf(oldUser);
-
-    this.users[index].username = user.username;
-    this.users[index].password = user.password;
-    this.users[index].firstName = user.firstName;
-    this.users[index].lastName = user.lastName;
-    this.users[index].email = user.email;
-
-  }
-
-  deleteUser(userId) { 
-     var oldUser = this.findUserById(userId);
-     var index = this.users.indexOf(oldUser);
-     this.users.splice(index, 1);
-   }
 }
+
+   updateWidget(widgetId: string, widget: Widget) { 
+    const oldWidget = this.findWidgetById(widgetId);
+    const index = this.widgets.indexOf(oldWidget);
+
+    this.widgets[index].size = widget.size;
+    this.widgets[index].text = widget.text;
+    this.widgets[index].width = widget.width;
+    this.widgets[index].url = widget.url;
+}
+deleteWidget(widgetId: string) { 
+     const oldWidget = this.findUserById(widgetId);
+     const index = this.widgets.indexOf(oldWidget);
+     this.widgets.splice(index, 1);
+
+
+
+
+
