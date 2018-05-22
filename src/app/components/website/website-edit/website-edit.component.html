@@ -1,0 +1,154 @@
+
+	<!-- ~~~~~~~ -->
+	<!-- Nav Bar -->
+	<!-- ~~~~~~~ -->
+	<nav class="row navbar navbar-dark bg-danger sw-font-white">
+
+		<!-- ~~~~~~~~~~~~~~~ -->
+		<!-- Nav Left column -->
+		<!-- ~~~~~~~~~~~~~~~ -->
+		<div class="col-4">
+		<div class="container">
+		
+			<!-- ~~~~~~~~~~ -->
+			<!-- arrow icon -->
+			<!-- ~~~~~~~~~~ -->
+			<div><a routerLink="/user/:uid/website" class="navbar-brand sw-font-white"><i class="fas fa-angle-left"></i></a>
+
+			<!-- ~~~~~~~~~ -->	
+			<!-- Text Link -->
+			<!-- ~~~~~~~~~ -->
+			<a routerLink="/user/:uid/website" class="navbar-brand"><strong>Websites</strong></a>
+		
+			<!-- ~~~~~~~~~ -->
+			<!-- Plus icon -->
+			<!-- ~~~~~~~~~ -->
+			<div class="float-right">
+			<a routerLink="user/:uid/website/:wid" class="navbar-brand float-right">
+			<i class="fas fa-plus"></i></a>
+			</div></div>
+		</div>
+		</div>
+		
+		<!-- ~~~~~~~~~~~~ -->
+		<!-- right column -->
+		<!-- ~~~~~~~~~~~~ -->
+		<div class="col-8">
+		<div class="container"></div>
+			
+			<!-- ~~~~~~~~~~~~ -->
+			<!-- NAVBAR Right -->
+			<!-- ~~~~~~~~~~~~ -->
+			<div><a routerLink="/user/:uid/website/:wid" class="navbar-brand sw-font-white"></a>
+
+			<!-- ~~~~~~~~~~~~~~~~~~ -->
+			<!-- Edit Websites Link -->
+			<!-- ~~~~~~~~~~~~~~~~~~ -->
+			<a routerLink="/user/:uid/website/:wid" class="navbar-brand"> <strong>Edit Websites</strong></a>
+			
+			<!-- ~~~~~~~~~~ -->
+			<!-- Check icon -->
+			<!-- ~~~~~~~~~~ -->
+			<div class="float-right">
+			<a routerLink="/user/:uid/website" class="navbar-brand float-right">
+			<i class="fas fa-check"></i></a>
+			</div>
+		</div>
+		</div>
+	</nav>
+
+		<!-- ~~~~~~~~~~~~~~~~ -->
+		<!-- Main Left column -->
+		<!-- ~~~~~~~~~~~~~~~~ -->
+		<div class="row navbar bg-white">
+		<div class="col-4">
+		
+
+		<!-- ~~~~~~~~~~~~~~~~~~~~~ -->
+		<!-- Container left column -->
+		<!-- ~~~~~~~~~~~~~~~~~~~~~ -->
+		<div class="container-fluid"><br><br>
+		
+			
+			<!-- ~~~~~~~~~~~~~~ -->
+			<!-- Navbar content -->
+			<!-- ~~~~~~~~~~~~~~ -->
+			
+			<!-- ~~~~~~~~~~~~~~~~~  -->
+			<!-- Address book line  -->
+			<!-- ~~~~~~~~~~~~~~~~~  -->
+			<div><ul><div>
+			<li class="navbar navbar-light container-fluid"><a style="color:black" routerLink="/user/:uid/website/:wid">Address Book App</a><div class="float-right"><a routerLink="/user/:uid/website/:wid"><i style="color:black" class="fas fa-cog"></i></a>
+			</div></div><p>	
+			
+			<!-- ~~~~~~~~~~~  -->
+			<!-- Testing app  -->
+			<!-- ~~~~~~~~~~~  -->
+			<div><li class="navbar navbar-light"><a style="color:black" routerLink="/user/:uid/website/:wid">Script Testing App</a><div class="float-right"><a routerLink="/user/:uid/website/:wid"><i style="color:black" class="fas fa-cog"></i></a>
+			</div></div><p>	
+
+			<!-- ~~~~~~~  -->
+			<!-- Blogger  -->
+			<!-- ~~~~~~~  -->
+			<div><li class="navbar navbar-light"><a style="color:black" routerLink="/user/:uid/website/:wid">Blogger</a><div class="float-right"><a routerLink="/user/:uid/website/:wid"><i style="color:black" class="fas fa-cog"></i></a>
+			</div></li></div>
+
+			<!-- ~~~~~~~  -->
+			<!-- Blog App  -->
+			<!-- ~~~~~~~  -->
+			<div><li class="navbar navbar-light"><a style="color:black" routerLink="/user/:uid/website/:wid">Blog App</a><div class="float-right"><a routerLink="/user/:uid/website/:wid"><i style="color:black" class="fas fa-cog"></i></a>
+			</div></li></div>
+			</ul>
+		</div>
+		</div>
+		</div>
+	
+		<!-- ~~~~~~~~~~~~~~~~~ -->
+		<!-- Main right column -->
+		<!-- ~~~~~~~~~~~~~~~~~ -->
+		<div class="col-8">
+
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
+		<!-- Container right column -->
+		<!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
+		<div class="container-fluid">
+
+		<!-- ~~~~~~~~~~~~~ -->
+		<!-- Profile Forms -->
+		<!-- ~~~~~~~~~~~~~ -->
+
+			<!-- ~~~~~~~~~~~~ -->
+			<!-- Website name -->
+			<!-- ~~~~~~~~~~~~ -->
+			<div class="form-group">Website Name
+			<input type="text" name="Website Name" placeholder="Website Name" class="form-control"></div>
+			
+			<!-- ~~~~~~~~~~~~ -->
+			<!-- Website name -->
+			<!-- ~~~~~~~~~~~~ -->
+			<div class="form-group">Website Description
+			<input type="text" name="Website Description" placeholder="Website Description" class="form-control">
+			</div>	
+			
+				<!-- ~~~~~~~~~~~~~ -->
+				<!-- Delete Button -->
+				<!-- ~~~~~~~~~~~~~ -->
+				<a class= "btn btn-danger btn-block" routerLink="/user/:uid/website">Delete</a></div>
+		</div>
+		</div>
+
+	<!-- ~~~~~~~~~~~~~~ -->
+	<!-- Footer Nav Bar -->	
+	<!-- ~~~~~~~~~~~~~~ -->	
+	<nav id="bottom" class="navbar navbar-dark bg-light fixed-bottom">
+			
+		<!-- ~~~~~~~~~ -->
+		<!-- Home Text -->
+		<!-- ~~~~~~~~~ -->
+		<a routerLink="/user/:uid/website" style="color:black" class="navbar-brand">Cancel</a>
+		
+		<!-- ~~~~~~~~~ -->
+		<!-- Home Icon -->
+		<!-- ~~~~~~~~~ -->	
+		<a routerLink="/user/:uid" class="navbar-brand">
+		<i style="color:black" class="fas fa-user"></i></a></nav>

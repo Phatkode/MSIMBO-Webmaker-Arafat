@@ -1,0 +1,86 @@
+
+
+	<!--~~~~~~~~~~~~~~~~~~~~~-->
+	<!--~~~~~~~~~~~~~~~~~~~~~-->
+	<!-- Profile Page Header Nav -->
+	<!--~~~~~~~~~~~~~~~~~~~~~-->
+	<!--~~~~~~~~~~~~~~~~~~~~~-->
+	<nav class=" fixed-top navbar navbar-dark bg-primary">	
+
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!-- arrow icon -->
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand sw-font-white">
+		<i class="fas fa-angle-left"></i></a>
+
+
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!-- Text Link -->	
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<a routerLink="/user/:uid/website/:wid/page/:pid" class="navbar-brand"> <strong>EDIT PAGE</strong></a>
+
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!-- Plus icon -->
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<!--~~~~~~~~~~~~~~~~~~~~~-->
+		<div class="float-right">
+		<a routerLink="/user/:uid/website/:wid/page	" class="navbar-brand float-right">
+		<i class="fas fa-check"></i></a>
+		</div>
+	</nav>
+
+
+				<!--~~~~~~~~~~~~~~~~-->
+				<!--~~~~~~~~~~~~~~~~-->	
+				<!-- Profile Forms  -->
+				<!--~~~~~~~~~~~~~~~~-->
+				<!--~~~~~~~~~~~~~~~~-->
+
+				<!-- ~~~~~~~~~ -->
+				<!-- Container -->
+				<!-- ~~~~~~~~~ -->
+				<div class="container"><br><br>
+					<!-- ~~~~~~~~~~~~~~~~~ -->
+					<!-- Form-Group "Name" -->
+					<!-- ~~~~~~~~~~~~~~~~~ -->
+					<div class="form-group">Name
+						<input type="text" name="Website Name" placeholder="Blog Post" class="form-control">
+					</div>
+
+					<!-- ~~~~~~~~~~~~~~~~~~ -->
+					<!-- Form-Group "Title" -->
+						<!-- ~~~~~~~~~~~~~~~~~~ -->
+					<div class="form-group">Title
+						<input type="text" name="Page Title" placeholder="Page Title" class="form-control">
+					</div>	
+
+						<!-- ~~~~~~~~~~~~~ -->
+						<!-- Delete Button -->
+						<!-- ~~~~~~~~~~~~~ -->					
+					<div>	
+						<a class= "btn btn-danger btn-block" routerLink="user/:uid/website/:wid/page	">Delete</a>
+					</div>
+				</div>
+			
+
+		<!-- ~~~~~~~~~~ -->
+		<!-- Footer Nav -->
+		<!-- ~~~~~~~~~~ -->	
+		<nav id="bottom" class="navbar navbar-dark bg-primary fixed-bottom">
+
+			<!-- ~~~~~~~~~ -->
+			<!-- Home text -->
+			<!-- ~~~~~~~~~ -->	
+			<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand">BACK</a>
+
+			<!-- ~~~~~~~~~ -->
+			<!-- Home icon -->
+			<!-- ~~~~~~~~~ -->	
+			<a routerLink="/user/:uid" class="navbar-brand">
+			<i class="fas fa-user"></i></a>
+		</nav>

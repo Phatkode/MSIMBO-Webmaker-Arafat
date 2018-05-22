@@ -1,0 +1,111 @@
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- PROFILE PAGE HEADER NAV -->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<nav style="height: 45px; " class=" fixed-top navbar navbar-dark bg-primary">	
+
+		<!-- ~~~~~~~~~~ -->
+		<!-- arrow icon -->
+		<!-- ~~~~~~~~~~ -->
+		<div><a routerLink="/user/:uid/website" class="navbar-brand sw-font-white">
+		<i class="fas fa-angle-left"></i></a>
+
+		<!-- ~~~~~~~~~ -->	
+		<!-- Text Link -->
+		<!-- ~~~~~~~~~ -->
+		<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand"> <strong>PAGELIST</strong></a>
+		
+		<!-- ~~~~~~~~ -->
+		<!-- Cog-icon -->
+		<!-- ~~~~~~~~ -->
+		<div class="float-right">
+		<a routerLink="/user/:uid/website/:wid/page/new" class="navbar-brand float-right">
+		<i class="fas fa-plus"></i></a>
+		</div></div></nav>
+
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	<!-- PROFILE PAGE BODY CONTENT -->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+		<!-- ~~~~~~~~~ -->
+		<!-- Container -->
+		<!-- ~~~~~~~~~ -->
+		<div class="container"><br><br>
+		
+			<!-- ~~~~~~~~~~~~~~ -->
+			<!-- Navbar content -->
+			<!-- ~~~~~~~~~~~~~~ -->
+			<div>
+			<ul class="btn-block">
+		
+				<!-- ~~~~~~~~~  -->
+				<!-- Blog Post  -->
+				<!-- ~~~~~~~~~  -->
+				<div>
+				<li class="navbar navbar-light" style="background-color: ##9AF985;"> 
+				<a routerLink="/user/:uid/website/:wid/page/new">Add Page</a>
+				<a routerLink="/user/:uid/website/:wid/page/new">
+				<i style="color: blue;" class="fas fa-cog"></i></a>
+				</div>
+				
+
+				<!-- ~~~~ -->
+				<!-- Blog -->
+				<!-- ~~~~ -->
+				<div>
+				<li class="navbar navbar-light" style="background-color: ##9AF985;"> 
+				<a routerLink="/user/:uid/website/:wid/page/:pid">Edit Page</a>
+				<a routerLink="/user/:uid/website/:wid/page/:pid">
+				<i style="color: blue;" class="fas fa-cog"></i></a>
+				</div>
+				
+
+				<!-- ~~~~  -->
+				<!-- Home  -->
+				<!-- ~~~~  -->
+				<div>
+				<li class="navbar navbar-light" style="background-color: ##9AF985;"> 
+				<a routerLink="/user/:uid/website/:wid/page/:pid/widget">Page Name</a>
+				<a routerLink="/user/:uid/website/:wid/page/:pid/widget">
+				<i style="color: blue;" class="fas fa-cog"></i></a>
+				</div>
+				
+
+				<!-- ~~~~~  -->
+				<!-- About  -->
+				<!-- ~~~~~  -->
+				<div>
+				<li class="navbar navbar-light" style="background-color: ##9AF985;"> 
+				<a routerLink="/user/:uid/website">Back</a>
+				<a routerLink="/user/:uid/website">
+				<i style="color: blue;" class="fas fa-cog"></i></a>
+				</div>
+				
+
+				<!-- ~~~~~~~~~~  -->
+				<!-- Contact Us  -->
+				<!-- ~~~~~~~~~~  -->
+				<div>
+				<li class="navbar navbar-light" style="background-color: ##9AF985;"> 
+				<a routerLink="/user/:uid">Profile</a>
+				<a routerLink="/user/:uid">
+				<i style="color: blue;" class="fas fa-cog"></i></a></div><p>
+				</ul>
+				</div>
+
+		<!-- ~~~~~~~~~~~~~~ -->
+		<!-- Footer Nav Bar -->	
+		<!-- ~~~~~~~~~~~~~~ -->	
+		<nav id="bottom" class="navbar navbar-dark bg-primary fixed-bottom">
+	
+			<!-- ~~~~~~~~~ -->
+			<!-- Back Text -->
+			<!-- ~~~~~~~~~ -->
+			<a routerLink="/user/:uid/website" class="navbar-brand">Back</a>
+
+			<!-- ~~~~~~~~~ -->
+			<!-- Home Icon -->	
+			<!-- ~~~~~~~~~ -->	
+			<a routerLink="/user/:uid" class="navbar-brand">
+			<i class="fas fa-user"></i></a>
+		</nav>

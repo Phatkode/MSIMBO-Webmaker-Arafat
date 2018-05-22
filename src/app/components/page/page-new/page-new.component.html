@@ -1,0 +1,65 @@
+
+		<!-- ~~~~~~~~~~~~~~~~~~ -->
+		<!-- PAGENEW HEADER NAV -->
+		<!-- ~~~~~~~~~~~~~~~~~~ -->
+		<nav class="column-navbar navbar-dark bg-primary fixed-top">	
+
+			<!-- ~~~~~~~~~~ -->
+			<!-- arrow icon -->
+			<!-- ~~~~~~~~~~ -->
+			<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand sw-font-white"><i class="fas fa-angle-left"></i></a>
+
+			<!-- ~~~~~~~~~ -->	
+			<!-- Text Link -->
+			<!-- ~~~~~~~~~ -->	
+				<a routerLink="/user/:uid/website/:wid/page/new" class="navbar-brand"> <strong>NEW PAGE</strong></a>
+				
+			<!-- ~~~~~~~~~ -->
+			<!-- Arrow icon -->
+			<!-- ~~~~~~~~~ -->
+			<div class="float-right">
+			<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand float-right">
+			<i class="fas fa-check"></i></a>
+			</div>
+		</nav>
+
+
+			
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			<!--   PROFILE FORMS CONTENT   -->
+			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+			<!-- ~~~~~~~~~~~~~~ -->
+			<!-- Form Container -->
+			<!-- ~~~~~~~~~~~~~~ -->
+			<div class="container"><br><br>
+				
+				<!-- ~~~~~~~~~~~~~~~ -->
+				<!-- Form Field- Name -->
+				<!-- ~~~~~~~~~~~~~~~ -->
+				<div class="form-group">Name
+				<input type="text" name="Website Name" placeholder="Page Name" class="form-control"></div>
+				
+				<!-- ~~~~~~~~~~~~~~~ -->
+				<!-- Form Field- Title -->
+				<!-- ~~~~~~~~~~~~~~~ -->
+				<div class="form-group">Title
+				<input type="text" name="Page Title" placeholder="Page Title" class="form-control"></div>	
+			</div>
+
+		<!-- ~~~~~~~~~~ -->
+		<!-- Footer Nav -->
+		<!-- ~~~~~~~~~~ -->
+		<nav id="bottom" class="navbar navbar-dark bg-primary fixed-bottom">
+			
+				<!-- ~~~~~~~~~ -->
+				<!-- Back link -->
+				<!-- ~~~~~~~~~ -->
+				<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand">Back</a>
+				
+				<!-- ~~~~~~~~~ -->
+				<!-- Pro Icon -->	
+				<!-- ~~~~~~~~~ -->	
+				<a routerLink="/user/:uid" class="navbar-brand">
+				<i class="fas fa-user"></i></a>
+		</nav>
