@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/user/login/login.component';
@@ -15,6 +17,11 @@ import { PageNewComponent } from './components/page/page-new/page-new.component'
 import { PageEditComponent } from './components/page/page-edit/page-edit.component';
 import { PageListComponent } from './components/page/page-list/page-list.component';
 import { WidgetYoutubeComponent } from './components/widget/widget-youtube/widget-youtube.component';
+
+import { PageService } from './Services/page.service.client'
+import { UserService } from './Services/user.service.client'
+import { WebsiteService } from './Services/website.service.client'
+import { WidgetService } from './Services/widget.service.client'
 
 import { Routing } from './app.routing';
 
@@ -38,9 +45,10 @@ import { Routing } from './app.routing';
   ],
   imports: [
     BrowserModule,
-    Routing
+    Routing,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

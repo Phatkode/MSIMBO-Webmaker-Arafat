@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {user} from  '../models/widget.model.client'
+import {Widget} from  '../Model/widget.model.client'
 
 // injecting service into module
 @Injectable()
@@ -30,7 +30,7 @@ widgets: Widget[] = [
  findWidgetsByPageId(pageId: string) {
     let result = [];
     for (var i = 0; i < this.widgets.length; i++){
-      if (this.widgets[i].pageId) === pageId) {
+      if (this.widgets[i].pageId === pageId) {
         result.push(this.widgets[i]);
     }
   }
@@ -39,10 +39,10 @@ widgets: Widget[] = [
 }
 
 
- findWidgetsById(widgetId: string) {
+ findWidgetById(widgetId: string) {
     for (var i = 0; i < this.widgets.length; i++){
-      if (this.widgets[i]._id) === widgetId) {
-        return this.widgets[i]._id;
+      if (this.widgets[i]._id === widgetId) {
+        return this.widgets[i];
     }
   }
 }
@@ -55,13 +55,12 @@ widgets: Widget[] = [
     this.widgets[index].text = widget.text;
     this.widgets[index].width = widget.width;
     this.widgets[index].url = widget.url;
+  }
+  deleteWidget(widgetId: string) { 
+       const oldWidget = this.findWidgetById(widgetId);
+       const index = this.widgets.indexOf(oldWidget);
+       this.widgets.splice(index, 1);
+
+  }
 }
-deleteWidget(widgetId: string) { 
-     const oldWidget = this.findUserById(widgetId);
-     const index = this.widgets.indexOf(oldWidget);
-     this.widgets.splice(index, 1);
-
-
-
-
 

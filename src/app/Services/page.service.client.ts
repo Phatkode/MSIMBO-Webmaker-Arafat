@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Page } from  '../models/page.model.client'
+import { Page } from  '../Model/page.model.client';
 
 // injecting service into module
 @Injectable()
@@ -27,8 +27,8 @@ pages: Page[] = [
   findPageByWebsite(websiteId: string) {
     let result = [];
     for (let i = 0; i <= this.pages.length; i++){
-      if (this.pages[i].websiteId) === userId) {
-        result.push(this.websites[i]);
+      if (this.pages[i].websiteId === websiteId) {
+        result.push(this.pages[i]);
     }
   }
 
@@ -39,7 +39,7 @@ pages: Page[] = [
 findPageById(pageId: string) {
     for (let x = 0; x < this.pages.length; x++) {
       if (this.pages[x]._id === pageId) {  
-        return this.pages[i];
+        return this.pages[x];
       }
     }
   }
@@ -55,7 +55,7 @@ updatePage(pageId: string, page: Page) {
 
 
 deletePage(pageId: string) { 
-     let oldPage = this.findPageById(PageId);
+     let oldPage = this.findPageById(pageId);
      const index = this.pages.indexOf(oldPage);
      this.pages.splice(index, 1);
    }

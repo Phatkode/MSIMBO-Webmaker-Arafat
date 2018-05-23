@@ -2,39 +2,41 @@
 	<!-- ~~~~~~~ -->
 	<!-- Nav Bar -->
 	<!-- ~~~~~~~ -->
-	<nav class="row navbar navbar-dark bg-danger sw-font-white">
-
+	<nav class="fixed-top row navbar navbar-dark bg-danger sw-font-white">
 		<!-- ~~~~~~~~~~~~~~~ -->
 		<!-- Nav Left column -->
 		<!-- ~~~~~~~~~~~~~~~ -->
-		<div class="col-4">
-		<div class="container">
+		<div class="col-4 d-none d-md-block">
+			<div class="container">
 		
 			<!-- ~~~~~~~~~~ -->
 			<!-- arrow icon -->
 			<!-- ~~~~~~~~~~ -->
-			<div><a routerLink="/user/:uid/website" class="navbar-brand sw-font-white"><i class="fas fa-angle-left"></i></a>
+				<div>
+					<a routerLink="/user/:uid/website" class="navbar-brand sw-font-white"><i class="fas fa-angle-left"></i></a>
 
 			<!-- ~~~~~~~~~ -->	
 			<!-- Text Link -->
 			<!-- ~~~~~~~~~ -->
-			<a routerLink="/user/:uid/website" class="navbar-brand"><strong>Websites</strong></a>
+					<a routerLink="/user/:uid/website" class="navbar-brand"><strong>Websites</strong></a>
 		
 			<!-- ~~~~~~~~~ -->
 			<!-- Plus icon -->
 			<!-- ~~~~~~~~~ -->
-			<div class="float-right">
-			<a routerLink="user/:uid/website/:wid" class="navbar-brand float-right">
-			<i class="fas fa-plus"></i></a>
-			</div></div>
-		</div>
+					<div class="float-right">
+							<a routerLink="user/:uid/website/:wid" class="navbar-brand float-right">
+								<i class="fas fa-plus"></i>
+							</a>
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<!-- ~~~~~~~~~~~~ -->
 		<!-- right column -->
 		<!-- ~~~~~~~~~~~~ -->
 		<div class="col-8">
-		<div class="container"></div>
+			<div class="container"></div>
 			
 			<!-- ~~~~~~~~~~~~ -->
 			<!-- NAVBAR Right -->
@@ -44,16 +46,16 @@
 			<!-- ~~~~~~~~~~~~~~~~~~ -->
 			<!-- Edit Websites Link -->
 			<!-- ~~~~~~~~~~~~~~~~~~ -->
-			<a routerLink="/user/:uid/website/:wid" class="navbar-brand"> <strong>Edit Websites</strong></a>
+				<a routerLink="/user/:uid/website/:wid" class="navbar-brand"> <strong>Edit Websites</strong></a>
 			
 			<!-- ~~~~~~~~~~ -->
 			<!-- Check icon -->
 			<!-- ~~~~~~~~~~ -->
-			<div class="float-right">
-			<a routerLink="/user/:uid/website" class="navbar-brand float-right">
-			<i class="fas fa-check"></i></a>
+				<div class="float-right">
+				<a routerLink="/user/:uid/website" class="navbar-brand float-right">
+				<i class="fas fa-check"></i></a>
+				</div>
 			</div>
-		</div>
 		</div>
 	</nav>
 
@@ -61,7 +63,7 @@
 		<!-- Main Left column -->
 		<!-- ~~~~~~~~~~~~~~~~ -->
 		<div class="row navbar bg-white">
-		<div class="col-4">
+		<div class="col-4 d-none d-md-block">
 		
 
 		<!-- ~~~~~~~~~~~~~~~~~~~~~ -->

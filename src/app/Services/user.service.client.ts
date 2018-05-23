@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from  '../models/user.model.client'
+import { User } from  '../Model/User.model.client'
 
 // injecting service into module
 @Injectable()

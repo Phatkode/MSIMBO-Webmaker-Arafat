@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Website } from  '../models/website.model.client'
+import { Website } from  '../Model/website.model.client'
 
 // injecting service into module
 @Injectable()
@@ -16,7 +16,6 @@ websites: Website[] = [
   { _id: "567", name: "Tic Tac Toe", developerId: "123", description: "Lorem" },
   { _id: "678", name: "Checkers", developerId: "123", description: "Lorem" },
   { _id: "789", name: "Chess", developerId: "234", description: "Lorem" }
-  new Website("789", "Chess", "234", "Lorem")
 ];
 
 // 1. createWebsite(userId, website) - adds the website parameter instance to the local websites array. The new website's developerId is set to the userId parameter
@@ -32,7 +31,7 @@ websites: Website[] = [
   findWebsiteByUser(userId: string) {
     var result = [];
     for (let i = 0; i <= this.websites.length; i++){
-      if (this.websites[i].developerId) === userId) {
+      if (this.websites[i].developerId === userId) {
         result.push(this.websites[i]);
     }
   }
@@ -43,7 +42,7 @@ websites: Website[] = [
 findWebsiteById(websiteId: string) {
     for (let x = 0; x < this.websites.length; x++) {
       if (this.websites[x]._id === websiteId) {  
-        return this.websites[i];
+        return this.websites[x];
       }
     }
   }
@@ -59,8 +58,8 @@ updateWebsite(websiteId: string, website: Website) {
 
 
 deleteWebsite(websiteId: string) { 
-     var web = this.findWebsiteById(WebsiteId);
-     var index = this.users.indexOf(web);
+     var web = this.findWebsiteById(websiteId);
+     var index = this.websites.indexOf(web);
      this.websites.splice(index, 1);
    }
 

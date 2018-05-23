@@ -1,43 +1,42 @@
+	<div class="container-fluid">
 
 
-	<!-- ~~~~~~~~~~~~~~~~~ -->	
-	<!-- Space at Page Top -->	
-	<!-- ~~~~~~~~~~~~~~~~~ -->
-	<br>
-	<br>
-	<br>
-	
-	<!-- ~~~~~~~~~~~~~~~~~ -->
-	<!--     Container     -->
-	<!-- ~~~~~~~~~~~~~~~~~ -->
-	<div class="container">
 
 		<!-- ~~~~~~~~~~~~~~~~~ -->
 		<!--       Title       -->
 		<!-- ~~~~~~~~~~~~~~~~~ -->
-		<h1 align="center" >Login</h1>
-				
+		<h1 style="text-align: center">Login</h1>
+		<div *ngIf="errorFlag" class="alert alert-danger">Invalid Username or password</div>
+
+
+				<form (ngSubmit)="login()" #f="ngForm">
 				<!-- ~~~~~~~~~~~~~~~~~~~~~ -->
 				<!-- Form Field (Username) -->
 				<!-- ~~~~~~~~~~~~~~~~~~~~~ -->
 				<div class="form-group">
-				<input type="text" name="Username" placeholder="Username" class="form-control"></div>
-
+				<input type="text" name="username" placeholder="Username" class="form-control" required ngModel #username="ngModel"></div>
 				<!-- ~~~~~~~~~~~~~~~~~~~~~ -->	
 				<!-- Form Field (Password) -->
 				<!-- ~~~~~~~~~~~~~~~~~~~~~ -->	
+
+				<span class="alert" *ngIf="username.invalid && username.touched">Please enter username!</span>
+
+
 				<div class="form-group">
-				<input type="text" name="Password" placeholder="Password" class="form-control">
+				<input required type="password" name="password" placeholder="Password" class="form-control" ngModel #password="ngModel">
 				</div>
 		<!-- ~~~~~~~~~~~~ -->		
 		<!-- Login Button -->
 		<!-- ~~~~~~~~~~~~ -->
-		<a class= "btn btn-primary btn-block" routerLink="/user/:uid" >Login
-		</a>
+
+		<span class="alert" *ngIf="password.invalid && password.touched">Please enter password!</span>
+		<button class= "btn btn-primary btn-block" [disabled]="f.invalid"  type="submit" >Login
+		</button>
 
 		<!-- ~~~~~~~~~~~~~~~ -->
 		<!-- Register Button -->
 		<!-- ~~~~~~~~~~~~~~~ -->
-		<a class= "btn btn-success btn-block" routerLink="/register">Register
-		</a>
-			</div>
+		<button routerLink="/register" class= "btn btn-success btn-block" type="submit">Register
+		</button>
+		</form>
+		</div>

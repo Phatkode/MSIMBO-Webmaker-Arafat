@@ -4,7 +4,7 @@ export class Website {
 	developerId: string;
 	description: string;
 
-	constructor(_id, name, developerId, description){
+	constructor(id, name, developerId, description){
 		this._id = id;
 		this.name = name;
 		this.developerId = developerId;
