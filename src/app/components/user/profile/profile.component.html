@@ -9,8 +9,8 @@
 			<!-- ~~~~~~~~~~~~~~ -->
 			<!-- User icon link -->
 			<!-- ~~~~~~~~~~~~~~ -->
-			<a routerLink="/user/:uid" class="navbar-brand">
-			<i class="fas fa-user"></i></a>
+			<button  form="profileForm" [disabled]="f.invalid" type="submit" class="btn sw-color-white sw-button-to-a">
+			<i class="fas fa-user"></i></button>
 			</nav>
 
 		
@@ -21,32 +21,33 @@
 		<!-- ~~~~~~~~~ -->
 		<!-- Container -->
 		<!-- ~~~~~~~~~ -->
-		<div class="container"><br><br>
-			
+		<div class="container-fluid"><br><br>
+			<form (ngSubmit)="update()" form="profileForm" #f="ngForm">
+
 			<!-- ~~~~~~~~~~~~ -->
 			<!-- Username Tab -->
 			<!-- ~~~~~~~~~~~~ -->
 			<div class="form-group">Username
-			<input type="text" name="Username" placeholder="Username" class="form-control">
+			<input type="text" name="Username" required ngModel #username="ngModel" placeholder="Username" class="form-control">
 			</div>
 			
 			<!-- ~~~~~~~~~ -->
 			<!-- Email Tab -->
 			<!-- ~~~~~~~~~ -->
 			<div class="form-group">Email
-			<input type="text" name="Email" placeholder="Email" class="form-control"></div>	
+			<input type="text" name="Email" required ngModel #email="ngModel" placeholder="Email" class="form-control"></div>	
 			
 			<!-- ~~~~~~~~~~~~~ -->
 			<!-- FirstName Tab -->
 			<!-- ~~~~~~~~~~~~~ -->
 			<div class="form-group">First Name
-			<input type="text" name="First Name" placeholder="First Name" class="form-control"> </div>
+			<input type="text" name="First Name" required ngModel #firstName="ngModel" placeholder="First Name" class="form-control"> </div>
 
 			<!-- ~~~~~~~~~~~~~ -->
 			<!-- LastName Tab -->
 			<!-- ~~~~~~~~~~~~~ -->
 			<div class="form-group">Last Name
-			<input type="text" name="Last Name" placeholder="Last Name" class="form-control"> </div>
+			<input type="text" name="Last Name" required ngModel #lastName="ngModel" placeholder="Last Name" class="form-control"> </div>
 
 				<!-- ~~~~~~~~~~~~~~~ -->
 				<!--     Buttons     -->	
@@ -61,7 +62,7 @@
 				<!-- Logout Button -->	
 				<!-- ~~~~~~~~~~~~~ -->
 				<a class= "btn btn-danger btn-block" routerLink="/login">Logout</a>
-		</div>
+		
 
 
 			<!-- ~~~~~~~~~~~~~~ -->

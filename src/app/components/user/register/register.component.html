@@ -34,39 +34,41 @@
 				<!-- Register label -->
 				<!-- ~~~~~~~~~~~~~~ -->
 				<h1  align="center" >Register</h1>
-
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
+					<div class="alert alert-danger" *ngIf="usernameError">username is already taken, please try another!</div>
+					<div class="alert alert-danger" *ngIf="passwordError">Two passwords are not matched!</div>
+					<form (ngSubmit)="register()" #f="ngForm">					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!-- Form field Username -->
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<div class="form-group">
-					<input type="text" name="username" placeholder="username" class="form-control">
+					<input type="text" name="username" required ngModel #username="ngModel" placeholder="username" class="form-control">
 					</div>
 
+						<span class="alert" *ngIf="username.invalid && username.touched">Please enter username</span>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!-- Form field Password -->
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<div class="form-group">
-					<input type="password" name="password" placeholder="password" class="form-control">
+					<input type="password" name="password" placeholder="password" required ngModel #password="ngModel" class="form-control">
 					</div>
 
+						<span class="alert" *ngIf="password.invalid && password.touched">Please enter password</span>
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<!--  Form field Verify  -->
 					<!-- ~~~~~~~~~~~~~~~~~~~ -->
 					<div class="form-group">
-					<input type="password" name=" verify-password" placeholder="verify password" class="form-control">
+					<input type="password" name="verifyPassword" placeholder="verify password" required ngModel #verifyPassword="ngModel" class="form-control">
 					</div>
-
+						<span class="alert" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password</span>
 						<!-- ~~~~~~~~~~~~~~~~~~~ -->
 						<!--   Register Button   -->
 						<!-- ~~~~~~~~~~~~~~~~~~~ -->
-						<a class= "btn btn-primary btn-block" routerLink="/user/:uid" >Register
-						</a>
+						<button class= "btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Register</button>
 
 						<!-- ~~~~~~~~~~~~~~~~~~~ -->
 						<!--    Cancel  Button   -->
 						<!-- ~~~~~~~~~~~~~~~~~~~ -->	
-						<a class= "btn btn-success btn-block" routerLink="/login">Cancel
-						</a>
+						<button class= "btn btn-success btn-block" routerLink="/login">Cancel
+						</button>
 					
 			<!-- ~~~~~~~~~~~~~~ -->
 			<!-- Footer Nav Bar -->		
