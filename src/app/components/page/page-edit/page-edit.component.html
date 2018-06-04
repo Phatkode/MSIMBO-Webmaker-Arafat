@@ -1,86 +1,29 @@
-
-
-	<!--~~~~~~~~~~~~~~~~~~~~~-->
-	<!--~~~~~~~~~~~~~~~~~~~~~-->
-	<!-- Profile Page Header Nav -->
-	<!--~~~~~~~~~~~~~~~~~~~~~-->
-	<!--~~~~~~~~~~~~~~~~~~~~~-->
-	<nav class=" fixed-top navbar navbar-dark bg-primary">	
-
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!-- arrow icon -->
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand sw-font-white">
-		<i class="fas fa-angle-left"></i></a>
-
-
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!-- Text Link -->	
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<a routerLink="/user/:uid/website/:wid/page/:pid" class="navbar-brand"> <strong>EDIT PAGE</strong></a>
-
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!-- Plus icon -->
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<!--~~~~~~~~~~~~~~~~~~~~~-->
-		<div class="float-right">
-		<a routerLink="/user/:uid/website/:wid/page	" class="navbar-brand float-right">
-		<i class="fas fa-check"></i></a>
+<nav class="navbar fixed-top navbar-light sw-bg-grey">
+		<a class="sw-color-black" routerLink="/user/{{uid}}/website/{{wid}}/page"><i class="fas fa-chevron-left"></i></a>
+		<div class="sw-90-width">
+			<a class="navbar-brand float-left" routerLink="/user/{{uid}}/website/{{wid}}/page/{{pid}}"><b>Edit Page</b></a>
 		</div>
+		<button type="submit" [disabled]="f.invalid" form="pageForm" class="btn sw-button-to-a sw-color-black float-right"><i class="fas fa-check"></i></button>
 	</nav>
+	<div class="container-fluid">
+		<form id="pageForm" (ngSubmit)="update()" #f="ngForm">
+			<div class="form-group">
+				<label><b>Name</b></label>
+				<input class="form-control" required ngModel="{{page.name}}" #name="ngModel" type="text" name="name" placeholder="Enter your page name..." value="Blog Post">
+			</div>
 
+			<div *ngIf="name.invalid && name.touched" class="alert alert-warning">Name cannot be empty</div>
 
-				<!--~~~~~~~~~~~~~~~~-->
-				<!--~~~~~~~~~~~~~~~~-->	
-				<!-- Profile Forms  -->
-				<!--~~~~~~~~~~~~~~~~-->
-				<!--~~~~~~~~~~~~~~~~-->
-
-				<!-- ~~~~~~~~~ -->
-				<!-- Container -->
-				<!-- ~~~~~~~~~ -->
-				<div class="container"><br><br>
-					<!-- ~~~~~~~~~~~~~~~~~ -->
-					<!-- Form-Group "Name" -->
-					<!-- ~~~~~~~~~~~~~~~~~ -->
-					<div class="form-group">Name
-						<input type="text" name="Website Name" placeholder="Blog Post" class="form-control">
-					</div>
-
-					<!-- ~~~~~~~~~~~~~~~~~~ -->
-					<!-- Form-Group "Title" -->
-						<!-- ~~~~~~~~~~~~~~~~~~ -->
-					<div class="form-group">Title
-						<input type="text" name="Page Title" placeholder="Page Title" class="form-control">
-					</div>	
-
-						<!-- ~~~~~~~~~~~~~ -->
-						<!-- Delete Button -->
-						<!-- ~~~~~~~~~~~~~ -->					
-					<div>	
-						<a class= "btn btn-danger btn-block" routerLink="user/:uid/website/:wid/page	">Delete</a>
-					</div>
-				</div>
-			
-
-		<!-- ~~~~~~~~~~ -->
-		<!-- Footer Nav -->
-		<!-- ~~~~~~~~~~ -->	
-		<nav id="bottom" class="navbar navbar-dark bg-primary fixed-bottom">
-
-			<!-- ~~~~~~~~~ -->
-			<!-- Home text -->
-			<!-- ~~~~~~~~~ -->	
-			<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand">BACK</a>
-
-			<!-- ~~~~~~~~~ -->
-			<!-- Home icon -->
-			<!-- ~~~~~~~~~ -->	
-			<a routerLink="/user/:uid" class="navbar-brand">
-			<i class="fas fa-user"></i></a>
-		</nav>
+			<div class="form-group">
+				<label><b>Description</b></label>
+				<input class="form-control" ngModel={{page.description}} #description="ngModel" type="text" name="description" placeholder="Enter your page description..." value="Blog">
+			</div>
+			<button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Update</button>
+			<button type="button" class="btn btn-danger btn-block" (click)="remove()">Delete</button>
+		</form>
+	</div>
+	<footer class="navbar fixed-bottom navbar-light sw-bg-grey">
+		<div class="sw-full-width">
+			<a class="navbar-brand float-right" routerLink="/user/{{uid}}"><i class="fas fa-user"></i></a>
+		</div>
+	</footer>

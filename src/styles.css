@@ -1,58 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
-
-
-#center{
-	text-align: center;
-}
-
-#bottom{ 
-	bottom: 0 }
-
-
-
 body{
-    padding-top: 70px;
-    padding-bottom: 70px
+	padding-top: 70px;
+	padding-bottom: 70px;
 }
- 
-.sw-font-white{
-    color: white;
+
+.sw-color-white{
+	color: white;
 }
- 
-.sw-width{
-    width:100%;
+
+.sw-color-black{
+	color: black;
 }
- 
-.sw-80-width{
-    width:80%;
+
+.sw-bg-grey{
+	background-color: #afafaf;
 }
- 
+
+.sw-full-width{
+	width: 100%;
+}
+
+.sw-95-width{
+	width: 95%;
+}
+
+.sw-90-width{
+	width: 90%;
+}
+
+.sw-50-width{
+	width: 50%;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
 .sw-left-padding{
-    padding-left: 20px;
+	padding-left: 20px
 }
- 
-.sw-no-underline:hover{
-    text-decoration: none;
-}
- 
-.sw-right-border{
-    border-right-style: solid;
-}
- 
-.sw-gray{
-    background-color: gray;
-}
- 
-.sw-black{
-    color: black;
-}
- 
+
 .sw-absolute-right{
-    position: absolute;
-    right: 15px;
+	position: absolute;
+	right: 15px;
 }
 
 
 .sw-button-to-a{
-    background-color: transparent;
+	background-color: transparent;
+}
+
+.sw-front{
+	z-index: 2
 }

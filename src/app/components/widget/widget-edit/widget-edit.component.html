@@ -1,52 +1,14 @@
-
-
-	<!-- Profile Page Header Nav -->
-	<nav class="fixed-top navbar navbar-dark bg-success">	
-
-		<!-- arrow icon -->
-	
-			<a routerLink="/user/:uid/website/:wid/page/:pid/widget" class=""><i class="navbar-brand sw-font-white fas fa-angle-left"></i></a>
-	
-		<!-- Text Link -->	
-			<a routerLink="/user/:uid/website/:wid/page/:pid/widget/:wgid" class="navbar-brand"> <strong>WIDGET EDIT</strong></a>
-		
-		<!-- Plus icon -->
-		<div class="navbar-brand float-right">
-		<a routerLink="/user/:uid/website/:wid/page/:pid/widget">
-		<i class="sw-font-white fas fa-check"></i></a>
-		</div></nav>
-
-
-	
-	<!-- Profile Forms (User, Email, F/L-Name) -->
-	<!-- Container -->
-
-	<div class="container"><br><br>
-		
-			<div class="form-group">Name
-				<input type="text" name="Name" placeholder="Name" class="form-control">
-			</div>
-		
-			<!-- Text Tab -->
-			<div class="form-group">Text
-				<input type="text" name="Page Title" placeholder="Us senate reaches..." class="form-control">
-			</div>	
-
-			<div class="form-group">Size
-				<input type="text" name="Page Title" placeholder="i.e. 3" class="form-control">
-			</div>
-
-		
-			<div>	
-				<a class= "btn btn-danger btn-block" routerLink="/user/:uid/website/:wid/page/:pid/widget">Delete</a>
-			</div>
+<div [ngSwitch]="widget.widgetType">
+	<!-- Heading -->
+	<div *ngSwitchCase="'HEADING'">
+		<app-widget-header></app-widget-header>
 	</div>
-
-	<!-- Footer Nav Bar -->	
-	<nav id="bottom" class="navbar navbar-dark bg-light fixed-bottom">
-		
-		<!-- Back Text -->
-		<a style="color:brown" routerLink="/user/:uid/website/:wid/page/:pid/widget" class="navbar-brand">Back</a>
-		<!-- Home Icon -->	
-		<a routerLink="/user/:uid"  class="navbar-brand">
-		<i style="color:brown" class="fas fa-user"></i></a></nav>
+	<!-- Image -->
+	<div *ngSwitchCase="'IMAGE'">
+		<app-widget-image></app-widget-image>
+	</div>
+	<!-- Youtube -->
+	<div *ngSwitchCase="'YOUTUBE'">
+		<app-widget-youtube></app-widget-youtube>
+	</div>
+</div>

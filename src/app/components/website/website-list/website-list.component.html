@@ -1,90 +1,22 @@
-
-
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~ -->
-<!-- Profile Page Header Nav -->
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~ -->
-<nav style="height: 50px" class="fixed-top column-navbar navbar-dark bg-primary">	
-
-
-		<!-- ~~~~~~~~~~ -->
-		<!-- arrow icon -->
-		<!-- ~~~~~~~~~~ -->
-		<a routerLink="/user/:uid" class="navbar-brand sw-font-white"><i class="fas fa-angle-left"></i></a>
-
-		<!-- ~~~~~~~~~ -->	
-		<!-- Text Link -->
-		<!-- ~~~~~~~~~ -->
-		<a routerLink="/user/:uid/website" class="navbar-brand"><strong>Websites</strong></a>
-		
-		<!-- ~~~~~~~~~ -->
-		<!-- Plus icon -->
-		<!-- ~~~~~~~~~ -->
-		<div class="float-right">
-		<a routerLink="/user/:uid/website/new" class="navbar-brand float-right"><i class="fas fa-plus"></i></a>
+<nav class="navbar fixed-top navbar-dark bg-primary">
+		<a class="sw-color-white" routerLink="/user/{{uid}}"><i class="fas fa-chevron-left"></i></a>
+		<div class="sw-90-width">
+			<a class="navbar-brand float-left" routerLink="/user/{{uid}}/website"><b>Websites</b></a>
 		</div>
-</nav>
-
-
-	<!-- Profile Forms (User, Email, F/L-Name) -->
-
-		<!-- ~~~~~~~~~ -->
-		<!-- Container -->
-		<!-- ~~~~~~~~~ -->
-		<div class="container"><br><br>
-		
-			
-		<!-- ~~~~~~~~~ -->
-		<!-- Nav Bar Content -->
-		<!-- ~~~~~~~~~ -->
-		<div>
-		<ul>
-		
-		
-		<!-- ~~~~~~~~~ -->
-		<!-- Address Bar -->
-		<!-- ~~~~~~~~~ -->
-
-
-				<!-- ~~~~~~~~~ -->
-		<!-- Address Book -->
-		<!-- ~~~~~~~~~ -->
-		<div>
-		<li class="navbar navbar-light" style="background-color: #e3f2fd;"><a routerLink="/user/:uid/website/new">New Website</a><br><div class="float-right"><a routerLink="/user/:uid/website/new"><i  class="fas fa-cog"></i></a>
-		</div></li></div><p>	
-		
-		<!-- ~~~~~~~~~ -->
-		<!-- Address Book -->
-		<!-- ~~~~~~~~~ -->
-		<div><li class="navbar navbar-light" style="background-color: #e3f2fd;"><a routerLink="/user/:uid/website/:wid">Edit Website</a><div class="float-right"><a routerLink="/user/:uid/website/:wid"><i  class="fas fa-cog"></i></a>
-		</div></li></div><p>	
-
-				<!-- ~~~~~~~~~ -->
-		<!-- Address Book -->
-		<!-- ~~~~~~~~~ -->
-		<div><li class="navbar navbar-light" style="background-color: #e3f2fd;"><a routerLink="/user/:uid/website/:wid/page">Website Name</a><div class="float-right"><a routerLink="user/:uid/website/:wid/page"><i  class="fas fa-cog"></i></a>
-		</div></li></div><p>	
-
-				<!-- ~~~~~~~~~ -->
-		<!-- Address Book -->
-		<!-- ~~~~~~~~~ -->
-		<div><li class="navbar navbar-light" style="background-color: #e3f2fd;"><a routerLink="/user/:uid">Profile</a><div class="float-right"><a routerLink="/user/:uid"><i  class="fas fa-cog"></i></a>
-		</div></li></div><p>	
+		<a class="sw-color-white" routerLink="/user/{{uid}}/website/new"><i class="fas fa-plus"></i></a>
+	</nav>
+	<!-- websites list -->
+	<div class="container-fluid">
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor ="let website of websites">
+				<a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
+				<a class="float-right" routerLink="/user/{{uid}}/website/{{website._id}}"><i class="fas fa-cog"></i></a>
+			</li>
 		</ul>
-		</div>
+	</div>
 
-		<!-- ~~~~~~~~~ -->
-		<!-- Footer Nav Bar -->
-		<!-- ~~~~~~~~~ -->
-	<nav class="navbar navbar-dark bg-primary fixed-bottom">
-		
-		<!-- ~~~~~~~~~ -->
-		<!-- Home text-->
-		<!-- ~~~~~~~~~ -->
-		<a href="#" class="navbar-brand"></a>
-		<!-- ~~~~~~~~~ -->
-		<!-- Home icon-->
-		<!-- ~~~~~~~~~ -->
-		<a routerLink="/user/:uid" class="navbar-brand">
-		<i class="fas fa-user"></i></a></nav>
-	
+	<footer class="navbar fixed-bottom navbar-dark bg-primary">
+		<div class="sw-full-width">
+			<a class="navbar-brand float-right" routerLink="/user/{{uid}}"><i class="fas fa-user"></i></a>
+		</div>
+	</footer>

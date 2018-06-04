@@ -1,138 +1,51 @@
-<!-- Nav Bar -->
-<nav class="fixed-top row navbar navbar-dark bg-primary sw-font-white">
-	<!-- Nav Left column -->
-	<div class="col-4 d-none d-md-block navbar navbar-dark bg-success">
-		<div class="container">
-			<!-- arrow icon -->
-			<a routerLink="/user/:uid/website" class="navbar-brand sw-font-white">
-				<i class="fas fa-angle-left"></i>
-			</a>
-			<!-- Website Text Link -->
-			<a routerLink="/user/:uid/website" class="navbar-brand">
-				<strong>Websites</strong>
-			</a>
-			<!-- Plus icon -->
-			<div class="float-right">
-				<a routerLink="/user/:uid/website" class="navbar-brand float-right">
-					<i class="fas fa-list"></i>
-				</a>
-			</div>
+<!-- Navbar -->
+	<nav class="row navbar navbar-dark bg-primary fixed-top">
+		<!-- Left Navbar -->
+		<div class="col-sm-4 d-none d-md-block">
+			<a class="sw-color-white" routerLink="/user/{{uid}}/website"><i class="fas fa-chevron-left"></i></a>
+			<a class="sw-color-white sw-left-padding" routerLink="/user/{{uid}}/website"><b>Websites</b></a>
+			<a class="sw-color-white float-right" routerLink="/user/{{uid}}/website/new"><i class="fas fa-plus"></i></a>
 		</div>
-	</div>
-	<!-- ~~~~~~~~~~~~~~~~ -->
-	<!-- Nav right column -->
-	<!-- ~~~~~~~~~~~~~~~~ -->
-	<div class="col-8">
-		<div class="container"></div>
-		<!-- ~~~~~~~~~~ -->
-		<!-- arrow icon -->
-		<!-- ~~~~~~~~~~ -->
-		<a href="#" class="navbar-brand sw-font-white"></a>
-		<!-- ~~~~~~~~~ -->
-		<!-- Text Link -->	
-		<!-- ~~~~~~~~~ -->		
-		<a routerLink="/user/:uid/website/new" class="navbar-brand"> <strong>New Website</strong></a>
-		<!-- ~~~~~~~~~ -->
-		<!-- Plus icon -->
-		<!-- ~~~~~~~~~ -->
-		<div class="float-right">
-			<a routerLink="/user/:uid/website" class="navbar-brand float-right"><i class="fas fa-check"></i></a>
+		<!-- Right Navbar -->
+		<div class="col-md-8">
+			<a class="sw-color-white" routerLink="/user/{{uid}}/website/new"><b>New Website</b></a>
+			<button class="btn sw-color-white float-right sw-button-to-a" type="submit" form="websiteForm" [disabled]="f.invalid"><i class="fas fa-check"></i></button>
 		</div>
-	</div>
-</nav>
-
-	<!-- ~~~~~~~~~~~~~~~~ -->
-	<!-- Main Left column -->
-	<!-- ~~~~~~~~~~~~~~~~ -->
+	</nav>
 	<div class="row">
-		<div class="col-4 d-none d-md-block">
-			<!-- ~~~~~~~~~~~~~~~~~~~~~ -->
-			<!-- Container left column -->
-			<!-- ~~~~~~~~~~~~~~~~~~~~~ -->
+		<!-- Left Website List -->
+		<div class="col-md-4 d-none d-md-block">
 			<div class="container-fluid">
-				<br>
-				<br>
-				<!-- ~~~~~~~~~~~~~~ -->
-				<!-- Navbar content -->
-				<!-- ~~~~~~~~~~~~~~ -->
-				<!-- ~~~~~~~~~~~~~~~~~  -->
-				<!-- Address book line  -->
-				<!-- ~~~~~~~~~~~~~~~~~  -->
-				<ul>
-					<li class="navbar navbar-light bg-success container-fluid" style="background-color: #e3f2fd;">
-						<a routerLink="/user/:uid/website/new" style="color: white">Address Book App</a>
-						<div class="float-right">
-							<a routerLink="/user/:uid/website/new"><i style=" color: white" class="fas fa-cog"></i></a>
-						</div>
-					</li>
-					<!-- ~~~~~~~~~~~  -->
-					<!-- Testing app  -->
-					<!-- ~~~~~~~~~~~  -->
-					<li class="navbar navbar-light bg-success container-fluid" style="background-color: #e3f2fd;">
-						<a routerLink="/user/:uid/website/new" style="color: white">Script Testing App</a>
-						<div class="float-right">
-							<a routerLink="/user/:uid/website/new"><i style=" color: white" class="fas fa-cog"></i></a>
-						</div>
-					</li>
-					<!-- ~~~~~~~  -->
-					<!-- Blogger  -->
-					<!-- ~~~~~~~  -->
-					<li class="navbar navbar-light bg-success container-fluid" style="background-color: #e3f2fd;">
-						<a routerLink="/user/:uid/website/new" style="color: white">Blogger</a>
-						<div class="float-right">
-							<a routerLink="/user/:uid/website/new"><i style=" color: white" class="fas fa-cog"></i></a>
-						</div>
-					</li>
-					<!-- ~~~~~~~  -->
-					<!-- Blog App  -->
-					<!-- ~~~~~~~  -->
-					<li class="navbar navbar-light bg-success container-fluid" style="background-color: #e3f2fd;">
-						<a routerLink="/user/:uid/website/new" style="color: white">Blog App</a>
-						<div class="float-right">
-							<a routerLink="/user/:uid/website/new"><i style=" color: white" class="fas fa-cog"></i></a>
-						</div>
+				<ul class="list-group">
+					<li class="list-group-item" *ngFor ="let website of websites">
+						<a routerLink="/user/{{uid}}/website/{{website._id}}/page">{{website.name}}</a>
+						<a class="float-right" routerLink="/user/{{uid}}/website/{{website._id}}"><i class="fas fa-cog"></i></a>
 					</li>
 				</ul>
 			</div>
 		</div>
-		<!-- ~~~~~~~~~~~~~~~~~ -->
-		<!-- Main right column -->
-		<!-- ~~~~~~~~~~~~~~~~~ -->
-		<div class="col-8">
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
-			<!-- Container right column -->
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~ -->
+		<!-- Right Form -->
+		<div class="col-md-8">
 			<div class="container-fluid">
-				<!-- ~~~~~~~~~~~~ -->
-				<!-- Profile Form -->
-				<!-- ~~~~~~~~~~~~ -->
-
-				<!-- ~~~~~~~~~~~~ -->
-				<!--     Name     -->
-				<!-- ~~~~~~~~~~~~ -->
-				<div class="form-group">Name
-					<input type="text" name="Name" placeholder="Name" class="form-control">
-				</div>
-				
-				<!-- ~~~~~~~~~~~~~~~~ -->
-				<!--   Description    -->
-				<!-- ~~~~~~~~~~~~~~~~ -->
-				<div class="form-group">Description
-					<textarea type="text" name="Description" placeholder="Description" class="form-control" row="5"></textarea>
-				</div>			
+				<form id="websiteForm" (ngSubmit)="create()" #f="ngForm">
+					<div class="form-group">
+						<label><b>Name</b></label>
+						<input class="form-control" type="text" name="name" placeholder="Enter your website name" required ngModel #name="ngModel">
+					</div>
+					<div class="alert alert-warning" *ngIf="name.invalid && name.touched">Name cannot be empty</div>
+					<div class="form-group">
+						<label><b>Description</b></label>
+						<textarea rows="5" class="form-control" name="description" placeholder="Describe your website here" ngModel #description="ngModel"></textarea>
+					</div>
+					<a routerLink="/user/{{uid}}/website" class="btn btn-danger">Cancel</a>
+					<button [disabled]="f.invalid" type="submit" class="btn btn-success float-right">Submit</button>
+				</form>
 			</div>
 		</div>
+		
 	</div>
-<!-- ~~~~~~~~~~~~~~ -->
-<!-- Footer Nav Bar -->	
-<!-- ~~~~~~~~~~~~~~ -->		
-<nav id="bottom" class="navbar navbar-dark bg-light fixed-bottom">
-	<!-- ~~~~~~~~~ -->
-	<!-- Back Text -->
-	<!-- ~~~~~~~~~ -->
-	<a routerLink="/user/:uid/website" style="color:green" class="navbar-brand">Back</a>
-	<!-- ~~~~~~~~~ -->
-	<!-- Home Icon -->	
-	<!-- ~~~~~~~~~ -->	
-	<a routerLink="/user/:uid" class="navbar-brand"><i style="color:green" class="fas fa-user"></i></a>
-</nav>
+	<footer class="navbar fixed-bottom navbar-dark bg-primary">
+		<div class="sw-full-width">
+			<a class="navbar-brand float-right" routerLink="/user/:uid"><i class="fas fa-user"></i></a>
+		</div>
+	</footer>

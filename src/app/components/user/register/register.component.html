@@ -1,88 +1,25 @@
-
-
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-			<!-- Register Page Header Nav -->
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~ -->
-			<nav class="fixed-top navbar navbar-dark bg-primary">	
-
-				<!-- ~~~~~~~~~ -->
-				<!-- Text Link -->	
-				<!-- ~~~~~~~~~~ -->	
-				<a routerLink="/login" class="navbar-brand">BACK</a>
-				
-				<!-- ~~~~~~~~~ -->
-				<!-- User icon -->
-				<!-- ~~~~~~~~~ -->
-				<a href="#" class="navbar-brand">
-				<i class="fas fa-sign-in-alt"></i></a>
-				</nav>
-
-
-			<!-- ~~~~~~~~~~~~~~~~~~~~ -->
-			<!-- Register form fields -->
-			<!-- ~~~~~~~~~~~~~~~~~~~~ -->
-			<br>
-			<br>
-			<br>
-
-			<!-- ~~~~~~~~~ -->
-			<!-- Container -->
-			<!-- ~~~~~~~~~ -->
-			<div class="container">
-				
-				<!-- ~~~~~~~~~~~~~~ -->
-				<!-- Register label -->
-				<!-- ~~~~~~~~~~~~~~ -->
-				<h1  align="center" >Register</h1>
-					<div class="alert alert-danger" *ngIf="usernameError">username is already taken, please try another!</div>
-					<div class="alert alert-danger" *ngIf="passwordError">Two passwords are not matched!</div>
-					<form (ngSubmit)="register()" #f="ngForm">					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!-- Form field Username -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div class="form-group">
-					<input type="text" name="username" required ngModel #username="ngModel" placeholder="username" class="form-control">
-					</div>
-
-						<span class="alert" *ngIf="username.invalid && username.touched">Please enter username</span>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!-- Form field Password -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div class="form-group">
-					<input type="password" name="password" placeholder="password" required ngModel #password="ngModel" class="form-control">
-					</div>
-
-						<span class="alert" *ngIf="password.invalid && password.touched">Please enter password</span>
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<!--  Form field Verify  -->
-					<!-- ~~~~~~~~~~~~~~~~~~~ -->
-					<div class="form-group">
-					<input type="password" name="verifyPassword" placeholder="verify password" required ngModel #verifyPassword="ngModel" class="form-control">
-					</div>
-						<span class="alert" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password</span>
-						<!-- ~~~~~~~~~~~~~~~~~~~ -->
-						<!--   Register Button   -->
-						<!-- ~~~~~~~~~~~~~~~~~~~ -->
-						<button class= "btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Register</button>
-
-						<!-- ~~~~~~~~~~~~~~~~~~~ -->
-						<!--    Cancel  Button   -->
-						<!-- ~~~~~~~~~~~~~~~~~~~ -->	
-						<button class= "btn btn-success btn-block" routerLink="/login">Cancel
-						</button>
-					
-			<!-- ~~~~~~~~~~~~~~ -->
-			<!-- Footer Nav Bar -->		
-			<!-- ~~~~~~~~~~~~~~ -->
-			<div class="container"><nav id="bottom" class="navbar navbar-dark bg-success fixed-bottom">
-						
-				<!-- ~~~~~~~~~ -->
-				<!-- Home Text -->
-				<!-- ~~~~~~~~~ -->
-				<a href="#" class="navbar-brand"></a>
-					
-				<!-- ~~~~~~~~~ -->
-				<!-- Home Icon -->
-				<!-- ~~~~~~~~~ -->	
-				<a href="#" class="navbar-brand">
-				<i class="fas fa-home"></i></a></nav></div>
-
+<div class="container-fluid">
+		<h1>Register</h1>
+		<div class="alert alert-danger" *ngIf="usernameError">
+			Username is already taken, please try another one.		
+		</div>
+		<div class="alert alert-danger" *ngIf="passwordError">
+			Two passwords are not matched!			
+		</div>
+		<form (ngSubmit)="register()" #f="ngForm">
+			<div class="form-group">
+				<input class="form-control" type="text" name="username" required ngModel #username="ngModel" placeholder="Username">
+			</div>
+			<span class="alert" *ngIf="username.invalid && username.touched">Please enter username!</span>
+			<div class="form-group">
+				<input class="form-control" type="password" name="password" required  ngModel #password="ngModel" placeholder="Password">
+			</div>
+			<span class="alert" *ngIf="password.invalid && password.touched">Please enter password!</span>
+			<div class="form-group">
+				<input class="form-control" type="password" name="verifyPassword" required ngModel #verifyPassword="ngModel" placeholder="Verify Password">
+			</div>
+			<span class="alert" *ngIf="verifyPassword.invalid && verifyPassword.touched">Please verify password!</span>
+			<button class="btn btn-primary btn-block" type="submit" [disabled]="f.invalid">Register</button>
+			<button class="btn btn-danger btn-block" routerLink="/login">Cancel</button>
+		</form>
+	</div>

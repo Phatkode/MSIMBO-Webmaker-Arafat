@@ -1,65 +1,35 @@
-
-		<!-- ~~~~~~~~~~~~~~~~~~ -->
-		<!-- PAGENEW HEADER NAV -->
-		<!-- ~~~~~~~~~~~~~~~~~~ -->
-		<nav class="column-navbar navbar-dark bg-primary fixed-top">	
-
-			<!-- ~~~~~~~~~~ -->
-			<!-- arrow icon -->
-			<!-- ~~~~~~~~~~ -->
-			<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand sw-font-white"><i class="fas fa-angle-left"></i></a>
-
-			<!-- ~~~~~~~~~ -->	
-			<!-- Text Link -->
-			<!-- ~~~~~~~~~ -->	
-				<a routerLink="/user/:uid/website/:wid/page/new" class="navbar-brand"> <strong>NEW PAGE</strong></a>
-				
-			<!-- ~~~~~~~~~ -->
-			<!-- Arrow icon -->
-			<!-- ~~~~~~~~~ -->
-			<div class="float-right">
-			<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand float-right">
-			<i class="fas fa-check"></i></a>
-			</div>
-		</nav>
+<nav class="navbar fixed-top navbar-light sw-bg-grey">
+	<a class="sw-color-black" routerLink="/user/{{uid}}/website/{{wid}}/page"><i class="fas fa-chevron-left"></i></a>
+	<div class="sw-90-width">
+		<a class="navbar-brand float-left" routerLink="/user/{{uid}}/website/{{wid}}/page/new"><b>New Page</b></a>
+	</div>
+	<button [disabled]="f.invalid" type="submit" form="pageForm" class="btn sw-button-to-a sw-color-black float-right" >
+		<i class="fas fa-check"></i>
+	</button>
+</nav>
 
 
-			
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-			<!--   PROFILE FORMS CONTENT   -->
-			<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="container-fluid">
+	<form id="pageForm" (ngSubmit)="create()" #f="ngForm">
+		<div class="form-group">
+			<label><b>Name</b></label>
+			<input class="form-control" required ngModel #name="ngModel" type="text" name="name" placeholder="Enter your page name...">
+		</div>
 
-			<!-- ~~~~~~~~~~~~~~ -->
-			<!-- Form Container -->
-			<!-- ~~~~~~~~~~~~~~ -->
-			<div class="container"><br><br>
-				
-				<!-- ~~~~~~~~~~~~~~~ -->
-				<!-- Form Field- Name -->
-				<!-- ~~~~~~~~~~~~~~~ -->
-				<div class="form-group">Name
-				<input type="text" name="Website Name" placeholder="Page Name" class="form-control"></div>
-				
-				<!-- ~~~~~~~~~~~~~~~ -->
-				<!-- Form Field- Title -->
-				<!-- ~~~~~~~~~~~~~~~ -->
-				<div class="form-group">Title
-				<input type="text" name="Page Title" placeholder="Page Title" class="form-control"></div>	
-			</div>
+		<div *ngIf="name.invalid && name.touched" class="alert alert-warning">Name cannot be empty</div>
 
-		<!-- ~~~~~~~~~~ -->
-		<!-- Footer Nav -->
-		<!-- ~~~~~~~~~~ -->
-		<nav id="bottom" class="navbar navbar-dark bg-primary fixed-bottom">
-			
-				<!-- ~~~~~~~~~ -->
-				<!-- Back link -->
-				<!-- ~~~~~~~~~ -->
-				<a routerLink="/user/:uid/website/:wid/page" class="navbar-brand">Back</a>
-				
-				<!-- ~~~~~~~~~ -->
-				<!-- Pro Icon -->	
-				<!-- ~~~~~~~~~ -->	
-				<a routerLink="/user/:uid" class="navbar-brand">
-				<i class="fas fa-user"></i></a>
-		</nav>
+		<div class="form-group">
+			<label><b>Description</b></label>
+			<input class="form-control" type="text" name="description" ngModel #description="ngModel" placeholder="Enter your page description...">
+		</div>
+
+		<button [disabled]="f.invalid" class="btn btn-success btn-block" type="submit">Submit</button>
+		<a class="btn btn-danger btn-block" routerLink="/user/{{uid}}/website/{{wid}}/page">Cancel</a>
+
+	</form>
+</div>
+<footer class="navbar fixed-bottom navbar-light sw-bg-grey">
+	<div class="sw-full-width">
+		<a class="navbar-brand float-right" routerLink="/user/{{uid}}"><i class="fas fa-user"></i></a>
+	</div>
+</footer>

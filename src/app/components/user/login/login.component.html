@@ -1,42 +1,16 @@
-	<div class="container-fluid">
-
-
-
-		<!-- ~~~~~~~~~~~~~~~~~ -->
-		<!--       Title       -->
-		<!-- ~~~~~~~~~~~~~~~~~ -->
-		<h1 style="text-align: center">Login</h1>
-		<div *ngIf="errorFlag" class="alert alert-danger">Invalid Username or password</div>
-
-
-				<form (ngSubmit)="login()" #f="ngForm">
-				<!-- ~~~~~~~~~~~~~~~~~~~~~ -->
-				<!-- Form Field (Username) -->
-				<!-- ~~~~~~~~~~~~~~~~~~~~~ -->
-				<div class="form-group">
-				<input type="text" name="username" placeholder="Username" class="form-control" required ngModel #username="ngModel"></div>
-				<!-- ~~~~~~~~~~~~~~~~~~~~~ -->	
-				<!-- Form Field (Password) -->
-				<!-- ~~~~~~~~~~~~~~~~~~~~~ -->	
-
-				<span class="alert" *ngIf="username.invalid && username.touched">Please enter username!</span>
-
-
-				<div class="form-group">
-				<input required type="password" name="password" placeholder="Password" class="form-control" ngModel #password="ngModel">
-				</div>
-		<!-- ~~~~~~~~~~~~ -->		
-		<!-- Login Button -->
-		<!-- ~~~~~~~~~~~~ -->
-
-		<span class="alert" *ngIf="password.invalid && password.touched">Please enter password!</span>
-		<button class= "btn btn-primary btn-block" [disabled]="f.invalid"  type="submit" >Login
-		</button>
-
-		<!-- ~~~~~~~~~~~~~~~ -->
-		<!-- Register Button -->
-		<!-- ~~~~~~~~~~~~~~~ -->
-		<button routerLink="/register" class= "btn btn-success btn-block" type="submit">Register
-		</button>
-		</form>
+<div class="container-fluid">
+	<h1>Login</h1>
+	<div *ngIf="errorFlag" class="alert alert-danger">Invalid username or password</div>
+	<form (ngSubmit)="login()" #f="ngForm">
+		<div class="form-group">
+			<input class="form-control" type="text" name="username" placeholder="Username" required ngModel #username="ngModel">
 		</div>
+		<span class="alert" *ngIf="username.invalid && username.touched">Please enter username!</span>
+		<div class="form-group">
+			<input class="form-control" required type="password" name="password" placeholder="Password" ngModel #password="ngModel">
+		</div>
+		<span class="alert" *ngIf="password.invalid && password.touched">Please enter password!</span>
+		<button class="btn btn-primary btn-block" [disabled]="f.invalid" type="submit">Login</button>
+		<button class="btn btn-success btn-block" routerLink="/register">Register</button>
+	</form>
+</div>
