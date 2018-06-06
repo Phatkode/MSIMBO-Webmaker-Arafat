@@ -1,5 +1,4 @@
 // require is a node js keyword like "import" in typescript
-
 // express library, create running server. can listen to incoming request
 const express = require('express'); 
 // app is a instance of express library. We are going to use it to be able to create server and be able to respond http request coming from browser/client side.
@@ -30,6 +29,8 @@ app.set('port', port);
 
 // Create HTTP server
 const server = http.createServer(app);
+
+require("./server/app")(app);
 
 // For Build: Catch all other routes and return the index file -- BUILDING
 app.get('*', function (req, res) {
